@@ -1,4 +1,4 @@
-import { Footer, Header } from "@/components/shared";
+import { Content, Footer, Header } from "@/components/shared";
 import type { Metadata } from "next";
 import { Noto_Sans_JP } from "next/font/google";
 import "./globals.css";
@@ -17,7 +17,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body className={notoSans.className}>
         <Provider>
           <Header />
-          <main>{children}</main>
+
+          <Content>{children}</Content>
+
           <Footer />
         </Provider>
       </body>

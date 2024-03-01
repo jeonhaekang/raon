@@ -11,7 +11,7 @@ export const Header = () => {
 
   const [isTop, setIsTop] = useState(true);
 
-  const { toggle } = useGlobalNav();
+  const { toggle, control } = useGlobalNav();
   const { scrollY } = useScroll();
   const controls = useAnimationControls();
 
@@ -30,7 +30,7 @@ export const Header = () => {
   }, [controls, isTop]);
 
   return (
-    <header className={clsx("py-9 sticky top-0 bg-white z-30", { "bg-white/50": !isTop })}>
+    <motion.header className={clsx("py-9 sticky top-0 bg-white z-30", { "bg-white/50": !isTop })} {...control}>
       <div className="px-6 sm:px-12">
         <motion.div
           animate={controls}
@@ -48,6 +48,6 @@ export const Header = () => {
           <button onClick={toggle}>MENU</button>
         </div>
       </div>
-    </header>
+    </motion.header>
   );
 };

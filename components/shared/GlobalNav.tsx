@@ -1,7 +1,6 @@
 "use client";
 
-import clsx from "clsx";
-import { motion, useAnimationControls } from "framer-motion";
+import { AnimationControls, motion, useAnimationControls } from "framer-motion";
 import { PropsWithChildren, createContext, useContext, useEffect, useState } from "react";
 
 const Context = createContext<{
@@ -9,6 +8,10 @@ const Context = createContext<{
   open: VoidFunction;
   close: VoidFunction;
   toggle: VoidFunction;
+  control: {
+    animate: AnimationControls;
+    transition: { duration: number; ease: string };
+  };
 } | null>(null);
 
 export const GlobalNav = ({ children }: PropsWithChildren) => {
@@ -24,13 +27,7 @@ export const GlobalNav = ({ children }: PropsWithChildren) => {
   const toggle = () => setIsOpen((prev) => !prev);
 
   useEffect(() => {
-    if (isOpen) {
-      controls.start({ translateX: "-300px" });
-      navControls.start({ translateX: "-300px" });
-    } else {
-      controls.start({ translateX: "0px" });
-      navControls.start({ translateX: "0px" });
-    }
+    [controls, navControls].forEach((control) => control.start({ x: isOpen ? "-300px" : "0px" }));
   }, [controls, isOpen, navControls]);
 
   const options = {
@@ -38,27 +35,23 @@ export const GlobalNav = ({ children }: PropsWithChildren) => {
     open,
     close,
     toggle,
+    control: {
+      animate: controls,
+      transition: { duration: 0.8, ease: "circOut" },
+    },
   };
 
   return (
     <Context.Provider value={options}>
-      <div className="flex overflow-hidden">
-        <motion.div
-          animate={controls}
-          transition={{ duration: 0.8, ease: "circOut" }}
-          className={clsx("min-w-[100vw]")}
-        >
-          {children}
-        </motion.div>
+      {children}
 
-        <motion.div
-          animate={navControls}
-          transition={{ duration: 0.8, ease: "circOut" }}
-          className="fixed right-[-300px] min-w-[300px] h-[100vh] z-40 bg-[#767676]"
-        >
-          global nav 도메인 연결
-        </motion.div>
-      </div>
+      <motion.div
+        animate={navControls}
+        transition={{ duration: 0.8, ease: "circOut" }}
+        className="fixed top-0 right-[-300px] min-w-[300px] h-[100vh] z-40 bg-[#767676]"
+      >
+        global nav 도메인 연결
+      </motion.div>
 
       {isOpen && <div className="fixed top-0 left-0 z-[31] w-[100vw] h-[100vh]" onClick={close} />}
     </Context.Provider>
