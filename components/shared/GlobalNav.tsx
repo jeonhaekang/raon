@@ -52,13 +52,11 @@ export const GlobalNav = ({ children }: PropsWithChildren) => {
         className="fixed top-0 p-8 right-[-300px] min-w-[300px] h-[100vh] overflow-y-scroll z-40 bg-[#767676]"
       >
         <Collapse trigger={<p className="text-3xl text-white font-thin">ABOUT US</p>}>
-          <ul className="mt-2 flex flex-col gap-1">
-            {["sample1", "sample2", "sample3"].map((name) => (
-              <li key={name} className="text-xs font-extralight text-white">
-                {name}
-              </li>
-            ))}
-          </ul>
+          {["sample1", "sample2", "sample3"].map((name) => (
+            <p key={name} className="text-xs font-extralight text-white">
+              {name}
+            </p>
+          ))}
         </Collapse>
       </motion.div>
 
