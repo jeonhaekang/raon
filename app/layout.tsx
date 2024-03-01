@@ -2,6 +2,7 @@ import { Footer, Header } from "@/components/shared";
 import type { Metadata } from "next";
 import { Noto_Sans_JP } from "next/font/google";
 import "./globals.css";
+import { Provider } from "./provider";
 
 const notoSans = Noto_Sans_JP({ subsets: ["latin"] });
 
@@ -14,9 +15,11 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en">
       <body className={notoSans.className}>
-        <Header />
-        <main>{children}</main>
-        <Footer />
+        <Provider>
+          <Header />
+          <main>{children}</main>
+          <Footer />
+        </Provider>
       </body>
     </html>
   );

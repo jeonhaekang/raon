@@ -4,12 +4,14 @@ import clsx from "clsx";
 import { motion, useAnimationControls, useScroll } from "framer-motion";
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
+import { useGlobalNav } from ".";
 
 export const Header = () => {
   const imageRef = useRef<HTMLImageElement>(null);
 
   const [isTop, setIsTop] = useState(true);
 
+  const { toggle } = useGlobalNav();
   const { scrollY } = useScroll();
   const controls = useAnimationControls();
 
@@ -28,7 +30,7 @@ export const Header = () => {
   }, [controls, isTop]);
 
   return (
-    <header className={clsx("py-9 sticky top-0 bg-white z-50", { "bg-white/50": !isTop })}>
+    <header className={clsx("py-9 sticky top-0 bg-white z-30", { "bg-white/50": !isTop })}>
       <div className="px-6 sm:px-12">
         <motion.div
           animate={controls}
@@ -43,9 +45,7 @@ export const Header = () => {
         <div className="flex justify-between pb-3 border-b border-black text-sm font-normal">
           <h1>RAON</h1>
 
-          <a href="#" className="group flex">
-            MENU
-          </a>
+          <button onClick={toggle}>MENU</button>
         </div>
       </div>
     </header>

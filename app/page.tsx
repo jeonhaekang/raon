@@ -6,7 +6,7 @@ import Image from "next/image";
 
 export default function Home() {
   return (
-    <div className="flex min-h-screen flex-col items-center">
+    <div className="flex flex-col items-center">
       <section className="w-full">
         <div className="relative w-full pt-[125%] sm:pt-[75%]">
           <Image src="/main.jpg" alt="main image" fill={true} className="object-cover" />
