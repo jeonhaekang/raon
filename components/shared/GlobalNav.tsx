@@ -2,6 +2,7 @@
 
 import { AnimationControls, motion, useAnimationControls } from "framer-motion";
 import { PropsWithChildren, createContext, useContext, useEffect, useState } from "react";
+import { Collapse } from "../common";
 
 const Context = createContext<{
   isOpen: boolean;
@@ -48,9 +49,17 @@ export const GlobalNav = ({ children }: PropsWithChildren) => {
       <motion.div
         animate={navControls}
         transition={{ duration: 0.8, ease: "circOut" }}
-        className="fixed top-0 right-[-300px] min-w-[300px] h-[100vh] z-40 bg-[#767676]"
+        className="fixed top-0 p-8 right-[-300px] min-w-[300px] h-[100vh] z-40 bg-[#767676]"
       >
-        global nav 도메인 연결
+        <Collapse trigger={<p className="text-3xl text-white font-thin">ABOUT US</p>}>
+          <ul className="mt-2 flex flex-col gap-1">
+            {["sample1", "sample2", "sample3"].map((name) => (
+              <li key={name} className="text-xs font-extralight text-white">
+                {name}
+              </li>
+            ))}
+          </ul>
+        </Collapse>
       </motion.div>
 
       {isOpen && <div className="fixed top-0 left-0 z-[31] w-[100vw] h-[100vh]" onClick={close} />}
