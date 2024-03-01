@@ -49,7 +49,7 @@ export const GlobalNav = ({ children }: PropsWithChildren) => {
       <motion.div
         animate={navControls}
         transition={{ duration: 0.8, ease: "circOut" }}
-        className="fixed top-0 p-8 right-[-300px] min-w-[300px] h-[100vh] z-40 bg-[#767676]"
+        className="fixed top-0 p-8 right-[-300px] min-w-[300px] h-[100vh] overflow-y-scroll z-40 bg-[#767676]"
       >
         <Collapse trigger={<p className="text-3xl text-white font-thin">ABOUT US</p>}>
           <ul className="mt-2 flex flex-col gap-1">
