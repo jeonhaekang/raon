@@ -28,7 +28,7 @@ export const Header = () => {
   }, [controls, isTop]);
 
   return (
-    <header className={clsx("py-9 sticky top-0 bg-white", { "bg-white/50": !isTop })}>
+    <header className={clsx("py-9 sticky top-0 bg-white z-50", { "bg-white/50": !isTop })}>
       <div className="px-6 sm:px-12">
         <motion.div
           animate={controls}
