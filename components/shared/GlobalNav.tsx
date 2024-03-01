@@ -42,7 +42,7 @@ export const GlobalNav = ({ children }: PropsWithChildren) => {
       <motion.div animate={controls} transition={{ duration: 0.8, ease: "circOut" }} className="flex">
         <div className={clsx("min-w-[100vw]")}>{children}</div>
 
-        <div className="sticky top-0 min-w-[300px] h-[100vh] z-40 bg-[#767676]">global nav</div>
+        <div className="sticky top-0 min-w-[300px] h-[100vh] z-40 bg-[#767676]">global nav 도메인 연결</div>
 
         {isOpen && <div className="fixed top-0 left-0 z-[31] w-[100vw] h-[100vh]" onClick={close} />}
       </motion.div>
