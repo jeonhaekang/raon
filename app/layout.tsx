@@ -1,6 +1,7 @@
 import { Content, Footer, Header } from "@/components/shared";
 import type { Metadata } from "next";
 import { Noto_Sans_JP } from "next/font/google";
+import Head from "next/head";
 import "./globals.css";
 import { Provider } from "./provider";
 
@@ -14,7 +15,11 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
-      <body className={notoSans.className}>
+      <Head>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/yakuhanjp@4.0.1/dist/css/yakuhanjp.css" />
+      </Head>
+
+      <body>
         <Provider>
           <Header />
 

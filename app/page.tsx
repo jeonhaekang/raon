@@ -16,7 +16,7 @@ export default function Home() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.7 }}
-              className="text-6xl font-extralight"
+              className="text-[12vw] leading-[10vw] sm:text-[8vw] sm:leading-[7vw] font-thin tracking-tighter"
             >
               WELLNESS
               <br />
@@ -27,7 +27,7 @@ export default function Home() {
               initial={{ opacity: 0, translateY: "100%" }}
               animate={{ opacity: 1, translateY: "0" }}
               transition={{ delay: 0.5, duration: 0.5 }}
-              className="font-medium"
+              className="mt-1"
             >
               世界を、笑顔に。
             </motion.p>
