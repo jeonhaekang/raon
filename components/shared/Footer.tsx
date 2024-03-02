@@ -7,7 +7,7 @@ import { useGlobalNav } from ".";
 import { InstagramIcon } from "../common";
 
 export const Footer = () => {
-  const { toggle, control } = useGlobalNav();
+  const { control } = useGlobalNav();
 
   return (
     <motion.footer className={clsx("flex flex-col items-center py-9 px-6 sm:px-12 bg-[#d2d2d2]")} {...control}>
