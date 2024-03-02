@@ -38,7 +38,7 @@ export const Header = () => {
           className={clsx("overflow-hidden w-fit origin-top-left mb-4")}
         >
           <a href="/">
-            <Image src="/brandLogo.svg" alt="brand logo" ref={imageRef} width={400} height={90} />
+            <Image src="/logo.svg" alt="brand logo" ref={imageRef} width={400} height={90} />
           </a>
         </motion.div>
 
