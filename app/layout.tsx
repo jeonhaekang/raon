@@ -2,6 +2,8 @@ import { Content, Footer, Header } from "@/components/shared";
 import type { Metadata } from "next";
 import { Noto_Sans_JP } from "next/font/google";
 import Head from "next/head";
+import "swiper/css";
+import "swiper/css/pagination";
 import "./globals.css";
 import { Provider } from "./provider";
 
