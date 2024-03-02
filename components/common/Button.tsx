@@ -7,8 +7,8 @@ const widthClass = {
 } as const;
 
 const colorClass = {
-  black: "border-black text-black hover:text-white hover:bg-black",
-  white: "border-white text-white hover:text-black hover:bg-white",
+  black: "border-black text-black sm:hover:text-white sm:hover:bg-black",
+  white: "border-white text-white sm:hover:text-black sm:hover:bg-white",
 };
 
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
