@@ -34,8 +34,8 @@ export const Header = () => {
       <div className="px-6 sm:px-12">
         <motion.div
           animate={controls}
-          transition={{ duration: 0.5, ease: "circInOut" }}
-          className={clsx("overflow-hidden w-fit origin-top-left mb-4")}
+          transition={{ duration: 1, ease: "anticipate" }}
+          className={clsx("overflow-hidden w-fit origin-top-left", { "mb-4": isTop })}
         >
           <a href="/">
             <Image src="/logo.svg" alt="brand logo" ref={imageRef} width={400} height={90} />
