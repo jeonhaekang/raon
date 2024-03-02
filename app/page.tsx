@@ -9,7 +9,7 @@ export default function Home() {
     <div className="flex flex-col items-center">
       <section className="w-full">
         <div className="relative w-full pt-[125%] sm:pt-[75%]">
-          <Image src="/main.jpg" alt="main image" fill={true} className="object-cover" />
+          <Image src="/main.jpg" alt="main image" fill={true} className="object-cover" priority />
 
           <div className="absolute overflow-hidden top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-white">
             <motion.p
