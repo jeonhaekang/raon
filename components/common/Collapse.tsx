@@ -20,7 +20,7 @@ export const Collapse = ({ children, trigger }: CollapseProps) => {
   }, [controls, isOpen]);
 
   return (
-    <div className="p-5">
+    <div>
       <button className="flex justify-between items-center w-full" onClick={() => setIsOpen(!isOpen)}>
         {trigger}
 
