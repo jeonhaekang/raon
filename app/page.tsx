@@ -1,18 +1,27 @@
 "use client";
 
 import { BroomIcon, Button, FadeUp, HalfIcon, RumorIcon } from "@/components/common";
-import { BrandSection } from "@/components/sections";
+import { BrandSection, Section } from "@/components/sections";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { Pagination } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 
+const carouselUrls = [
+  "/broom/broom_in.jpeg",
+  "/broom/broom_out.jpeg",
+  "/half/half_in.jpeg",
+  "/half/half_out.jpeg",
+  "/rumor/rumor_in.jpeg",
+  "/rumor/rumor_out.jpeg",
+];
+
 export default function Home() {
   return (
     <div className="flex flex-col items-center">
       <section className="w-full">
-        <div className="relative w-full pt-[125%] sm:pt-[75%]">
-          <Image src="/main.jpg" alt="main image" fill={true} className="object-cover" priority />
+        <div className="relative w-full h-[100vh]">
+          <Image src="/rumor/rumor_in.jpeg" alt="main image" fill={true} className="object-cover" priority />
 
           <div className="absolute overflow-hidden top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-white">
             <motion.p
@@ -61,17 +70,17 @@ export default function Home() {
             },
           }}
         >
-          {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((number) => (
-            <SwiperSlide key={number} style={{ width: "300px" }}>
+          {[...carouselUrls, ...carouselUrls].map((url, index) => (
+            <SwiperSlide key={`${url}_${index}`} style={{ width: "300px" }}>
               <div className="relative w-full pt-[50%]">
-                <Image src="/main.jpg" alt="main image" fill={true} className="object-cover" />
+                <Image src={url} alt="carousel" fill={true} className="object-cover" />
               </div>
             </SwiperSlide>
           ))}
         </Swiper>
       </section>
 
-      <section className="px-4 my-8 sm:px-8 sm:my-16 w-full max-w-[750px]">
+      <Section>
         <FadeUp>
           <Image src="/logo.svg" alt="brand logo" width={400} height={90} />
         </FadeUp>
@@ -107,7 +116,7 @@ export default function Home() {
         <FadeUp className="flex justify-center">
           <Button width="fix" color="black" title="MAGAZINE" description="MASH GROUP マガジン" className="mt-8 " />
         </FadeUp>
-      </section>
+      </Section>
 
       <BrandSection
         icon={<RumorIcon />}

@@ -2,7 +2,6 @@
 
 import clsx from "clsx";
 import { motion, useAnimationControls, useScroll } from "framer-motion";
-import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 import { useGlobalNav } from ".";
 
@@ -20,12 +19,12 @@ export const Header = () => {
   }, [scrollY]);
 
   useEffect(() => {
-    const imageHight = imageRef.current?.height ?? 0;
+    const imageHight = imageRef.current?.clientHeight ?? 0;
 
     if (isTop) {
-      controls.start({ transform: "scale(1)", height: `${imageHight}px` });
+      controls.start({ transform: "scale(1)", height: `${imageHight}px`, marginBottom: 16 });
     } else {
-      controls.start({ transform: "scale(0)", height: 0 });
+      controls.start({ transform: "scale(0)", height: 0, marginBottom: 0 });
     }
   }, [controls, isTop]);
 
@@ -35,15 +34,17 @@ export const Header = () => {
         <motion.div
           animate={controls}
           transition={{ duration: 1, ease: "anticipate" }}
-          className={clsx("overflow-hidden w-fit origin-top-left", { "mb-4": isTop })}
+          className={clsx("overflow-hidden w-fit origin-top-left")}
         >
-          <a href="/">
-            <Image src="/logo.svg" alt="brand logo" ref={imageRef} width={400} height={90} />
-          </a>
+          <div ref={imageRef}>
+            <a href="/" className="font-thin text-4xl">
+              RAON
+            </a>
+          </div>
         </motion.div>
 
         <div className="flex justify-between pb-3 border-b border-black text-sm font-normal">
-          <h1>RAON</h1>
+          <h1>株式会社RAON</h1>
 
           <button onClick={toggle}>MENU</button>
         </div>
