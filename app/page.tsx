@@ -1,6 +1,6 @@
 "use client";
 
-import { Button, FadeUp } from "@/components/common";
+import { BroomIcon, Button, FadeUp, HalfIcon, RumorIcon } from "@/components/common";
 import { BrandSection } from "@/components/sections";
 import { motion } from "framer-motion";
 import Image from "next/image";
@@ -110,23 +110,29 @@ export default function Home() {
       </section>
 
       <BrandSection
-        title="ブランド一覧"
-        description="マッシュグループ各ブランドの詳細情報"
-        logoUrl="/logo.svg"
+        icon={<RumorIcon />}
+        title="ルーマースプレッズ"
+        description="ルーマー スプレッズの詳細情報"
+        imageUrl="/rumor/rumor_in.jpeg"
+        logoUrl="/rumor/rumor_logo_fit.svg"
         linkUrl="#"
       />
 
       <BrandSection
-        title="マッシュグループ一覧"
-        description="国内外のグループ会社一覧"
-        logoUrl="/logo.svg"
+        icon={<BroomIcon />}
+        title="ビルームススタジオ"
+        imageUrl="/broom/broom_in.jpeg"
+        description="ビルームススタジオの詳細情報"
+        logoUrl="/broom/broom_logo_fit.svg"
         linkUrl="#"
         bgColor="#EFEFEF"
       />
 
       <BrandSection
-        title="リクルート"
-        description="マッシュグループで働くこと。その魅力や私たちが目指すものを、さまざまな職種の紹介とともにお話しします。"
+        icon={<HalfIcon />}
+        title="二分の一"
+        imageUrl="/half/half_out.jpeg"
+        description="二分の一の詳細情報"
         logoUrl="/logo.svg"
         linkUrl="#"
       />
