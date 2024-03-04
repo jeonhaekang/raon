@@ -1,6 +1,7 @@
 "use client";
 
 import { Button, FadeUp } from "@/components/common";
+import { BrandSection } from "@/components/sections";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { Pagination } from "swiper/modules";
@@ -108,85 +109,27 @@ export default function Home() {
         </FadeUp>
       </section>
 
-      <section className="px-4 py-8 sm:px-8 sm:py-16 w-full bg-[#efefef]">
-        <div className="max-w-[750px] w-full mx-auto">
-          <FadeUp>
-            <Image src="/logo.svg" alt="brand logo" width={400} height={90} />
-          </FadeUp>
+      <BrandSection
+        title="ブランド一覧"
+        description="マッシュグループ各ブランドの詳細情報"
+        logoUrl="/logo.svg"
+        linkUrl="#"
+      />
 
-          <FadeUp>
-            <h2 className="mt-6 sm:mt-8 text-center sm:text-left text-xl font-medium">ブランド一覧</h2>
-          </FadeUp>
+      <BrandSection
+        title="マッシュグループ一覧"
+        description="国内外のグループ会社一覧"
+        logoUrl="/logo.svg"
+        linkUrl="#"
+        bgColor="#EFEFEF"
+      />
 
-          <FadeUp>
-            <div className="flex flex-col sm:flex-row sm:items-end mt-6">
-              <div className="relative sm:w-[60%] pt-[60%] sm:pt-[30%]">
-                <Image src="/main.jpg" alt="main image" fill={true} className="object-cover" />
-              </div>
-
-              <div className="mt-2 sm:ml-6 sm:w-[40%]">
-                <p className="text-sm">マッシュグループ各ブランドの詳細情報</p>
-
-                <Button color="black" description="全てのブランドを見る" className="mt-6" />
-              </div>
-            </div>
-          </FadeUp>
-        </div>
-      </section>
-
-      <section className="px-4 py-8 sm:px-8 sm:py-16 w-full">
-        <div className="max-w-[750px] w-full mx-auto">
-          <FadeUp>
-            <Image src="/logo.svg" alt="brand logo" width={400} height={90} />
-          </FadeUp>
-
-          <FadeUp>
-            <h2 className="mt-6 sm:mt-8 text-center sm:text-left text-xl font-medium">マッシュグループ一覧</h2>
-          </FadeUp>
-
-          <FadeUp>
-            <div className="flex flex-col sm:flex-row sm:items-end mt-6">
-              <div className="relative sm:w-[60%] pt-[60%] sm:pt-[30%]">
-                <Image src="/main.jpg" alt="main image" fill={true} className="object-cover" />
-              </div>
-
-              <div className="mt-2 sm:ml-6 sm:w-[40%]">
-                <p className="text-sm">国内外のグループ会社一覧</p>
-
-                <Button color="black" description="一覧を見る" className="mt-6" />
-              </div>
-            </div>
-          </FadeUp>
-        </div>
-      </section>
-
-      <section className="px-4 py-8 sm:px-8 sm:py-16 w-full  bg-[#efefef]">
-        <div className="max-w-[750px] w-full mx-auto">
-          <FadeUp>
-            <Image src="/logo.svg" alt="brand logo" width={400} height={90} />
-          </FadeUp>
-
-          <FadeUp>
-            <h2 className="mt-6 sm:mt-8 text-center sm:text-left text-xl font-medium">リクルート</h2>
-          </FadeUp>
-
-          <FadeUp>
-            <div className="flex flex-col sm:flex-row sm:items-end mt-6">
-              <div className="relative sm:w-[60%] pt-[60%] sm:pt-[30%]">
-                <Image src="/main.jpg" alt="main image" fill={true} className="object-cover" />
-              </div>
-
-              <div className="mt-2 sm:ml-6 sm:w-[40%]">
-                <p className="text-sm">
-                  マッシュグループで働くこと。その魅力や私たちが目指すものを、さまざまな職種の紹介とともにお話しします。
-                </p>
-
-                <Button color="black" description="求人を探す" className="mt-6" />
-              </div>
-            </div>
-          </FadeUp>
-        </div>
-      </section>
+      <BrandSection
+        title="リクルート"
+        description="マッシュグループで働くこと。その魅力や私たちが目指すものを、さまざまな職種の紹介とともにお話しします。"
+        logoUrl="/logo.svg"
+        linkUrl="#"
+      />
     </div>
   );
 }
