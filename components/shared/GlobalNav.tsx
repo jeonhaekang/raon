@@ -2,19 +2,11 @@
 
 import { AnimationControls, motion, useAnimationControls } from "framer-motion";
 import { PropsWithChildren, createContext, useContext, useEffect, useState } from "react";
-import { Collapse } from "../common";
 
 const menus = [
-  {
-    title: "ABOUT US",
-    subMenus: [
-      { title: "sample1", href: "#" },
-      { title: "sample2", href: "#" },
-      { title: "sample3", href: "#" },
-    ],
-  },
-  { title: "BRANS", href: "#" },
-  { title: "CONTACT", href: "#" },
+  { title: "ABOUT US", href: "/about" },
+  { title: "BRANS", href: "/brand" },
+  { title: "CONTACT", href: "/contact" },
 ];
 
 interface MenuAniProps extends PropsWithChildren {
@@ -24,11 +16,6 @@ interface MenuAniProps extends PropsWithChildren {
 interface MenuItemProps extends MenuAniProps {
   title: string;
   href: string;
-}
-
-interface MenuGroupProps extends MenuAniProps {
-  title: string;
-  subMenus: MenuItemProps[];
 }
 
 const MenuAni = ({ children, inPlay }: MenuAniProps) => {
@@ -59,18 +46,6 @@ const MenuItem = ({ title, href, inPlay }: MenuItemProps) => (
   </MenuAni>
 );
 
-const MenuGroup = ({ title, subMenus, inPlay }: MenuGroupProps) => (
-  <MenuAni inPlay={inPlay}>
-    <Collapse trigger={<p className="text-3xl text-white font-thin">{title}</p>}>
-      {subMenus.map(({ title, href }) => (
-        <p key={title} className="text-xs font-extralight text-white">
-          <a href={href}>{title}</a>
-        </p>
-      ))}
-    </Collapse>
-  </MenuAni>
-);
-
 const Context = createContext<{
   isOpen: boolean;
   open: VoidFunction;
@@ -93,21 +68,6 @@ export const GlobalNav = ({ children }: PropsWithChildren) => {
   const close = () => setIsOpen(false);
 
   const toggle = () => setIsOpen((prev) => !prev);
-
-  const menuElements = menus.map(({ title, subMenus, href }) => {
-    if (subMenus) {
-      return (
-        <MenuGroup
-          key={title}
-          title={title}
-          subMenus={subMenus.map((menu) => ({ ...menu, inPlay: isOpen }))}
-          inPlay={isOpen}
-        />
-      );
-    }
-
-    return <MenuItem key={title} title={title} href={href} inPlay={isOpen} />;
-  });
 
   useEffect(() => {
     [controls, navControls].forEach((control) => control.start({ x: isOpen ? "-300px" : "0px" }));
@@ -133,7 +93,9 @@ export const GlobalNav = ({ children }: PropsWithChildren) => {
         transition={{ duration: 0.8, ease: "circOut" }}
         className="flex flex-col gap-4 fixed top-0 p-8 right-[-300px] min-w-[300px] h-[100vh] overflow-y-scroll z-40 bg-[#767676]"
       >
-        {menuElements}
+        {menus.map(({ title, href }) => (
+          <MenuItem key={title} title={title} href={href} inPlay={isOpen} />
+        ))}
       </motion.div>
 
       {isOpen && <div className="fixed top-0 left-0 z-[31] w-[100vw] h-[100vh]" onClick={close} />}
