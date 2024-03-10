@@ -17,30 +17,58 @@ const menus = [
   { title: "CONTACT", href: "#" },
 ];
 
-interface MenuItemProps {
+interface MenuAniProps extends PropsWithChildren {
+  inPlay: boolean;
+}
+
+interface MenuItemProps extends MenuAniProps {
   title: string;
   href: string;
 }
 
-interface MenuGroupProps {
+interface MenuGroupProps extends MenuAniProps {
   title: string;
   subMenus: MenuItemProps[];
 }
 
-const MenuItem = ({ title, href }: MenuItemProps) => (
-  <a href={href} className="text-3xl text-white font-thin">
-    {title}
-  </a>
+const MenuAni = ({ children, inPlay }: MenuAniProps) => {
+  const controls = useAnimationControls();
+
+  useEffect(() => {
+    if (inPlay) {
+      controls.start({ translateY: "0%" });
+    } else {
+      controls.start({ translateY: "100%" });
+    }
+  }, [controls, inPlay]);
+
+  return (
+    <div className="overflow-hidden">
+      <motion.div transition={{ duration: 0.3, delay: 0.2 }} animate={controls}>
+        {children}
+      </motion.div>
+    </div>
+  );
+};
+
+const MenuItem = ({ title, href, inPlay }: MenuItemProps) => (
+  <MenuAni inPlay={inPlay}>
+    <a href={href} className="text-3xl text-white font-thin">
+      {title}
+    </a>
+  </MenuAni>
 );
 
-const MenuGroup = ({ title, subMenus }: MenuGroupProps) => (
-  <Collapse trigger={<p className="text-3xl text-white font-thin">{title}</p>}>
-    {subMenus.map(({ title, href }) => (
-      <p key={title} className="text-xs font-extralight text-white">
-        <a href={href}>{title}</a>
-      </p>
-    ))}
-  </Collapse>
+const MenuGroup = ({ title, subMenus, inPlay }: MenuGroupProps) => (
+  <MenuAni inPlay={inPlay}>
+    <Collapse trigger={<p className="text-3xl text-white font-thin">{title}</p>}>
+      {subMenus.map(({ title, href }) => (
+        <p key={title} className="text-xs font-extralight text-white">
+          <a href={href}>{title}</a>
+        </p>
+      ))}
+    </Collapse>
+  </MenuAni>
 );
 
 const Context = createContext<{
@@ -68,10 +96,17 @@ export const GlobalNav = ({ children }: PropsWithChildren) => {
 
   const menuElements = menus.map(({ title, subMenus, href }) => {
     if (subMenus) {
-      return <MenuGroup key={title} title={title} subMenus={subMenus} />;
+      return (
+        <MenuGroup
+          key={title}
+          title={title}
+          subMenus={subMenus.map((menu) => ({ ...menu, inPlay: isOpen }))}
+          inPlay={isOpen}
+        />
+      );
     }
 
-    return <MenuItem key={title} title={title} href={href} />;
+    return <MenuItem key={title} title={title} href={href} inPlay={isOpen} />;
   });
 
   useEffect(() => {

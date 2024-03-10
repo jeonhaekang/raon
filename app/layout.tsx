@@ -9,7 +9,7 @@ import { Provider } from "./provider";
 const notoSans = Noto_Sans_JP({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "RAON Online Co.,Ltd. | 株式会社ラオン",
+  title: "RAON Co.,Ltd. | 株式会社ラオン",
   description: "株式会社RAON",
 };
 
