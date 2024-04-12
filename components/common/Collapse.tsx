@@ -3,9 +3,10 @@ import { PropsWithChildren, ReactElement, useEffect, useState } from "react";
 
 interface CollapseProps extends PropsWithChildren {
   trigger: ReactElement;
+  closeTrigger?: boolean;
 }
 
-export const Collapse = ({ children, trigger }: CollapseProps) => {
+export const Collapse = ({ children, trigger, closeTrigger = false }: CollapseProps) => {
   const [isOpen, setIsOpen] = useState(false);
 
   const controls = useAnimationControls();
@@ -14,6 +15,10 @@ export const Collapse = ({ children, trigger }: CollapseProps) => {
     open: { height: "auto" },
     closed: { height: 0 },
   };
+
+  useEffect(() => {
+    if (closeTrigger) setIsOpen(false);
+  }, [closeTrigger]);
 
   useEffect(() => {
     controls.start({ rotate: isOpen ? 0 : 90 });

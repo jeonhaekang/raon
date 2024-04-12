@@ -9,21 +9,23 @@ import { SectionProps } from "./Section";
 
 interface BrandSectionProps extends SectionProps {
   title: string;
-  description: string;
   icon: ReactElement;
   imageUrl: string;
+  description?: ReactElement;
   logoUrl: string;
-  linkUrl: string;
+  linkUrl?: string;
+  button?: boolean;
   buttonText?: string;
 }
 
 export const BrandSection = ({
   title,
-  description,
   icon,
   imageUrl,
   logoUrl,
   linkUrl,
+  button = true,
+  description,
   buttonText = "詳細を見る",
   ...sectionProps
 }: BrandSectionProps) => {
@@ -42,11 +44,13 @@ export const BrandSection = ({
           </div>
 
           <div className="mt-2 sm:ml-6 sm:w-[40%]">
-            <p className="text-sm">{description}</p>
+            {description && description}
 
-            <Link href={linkUrl} target="_blank">
-              <Button color="black" description={buttonText} className="mt-6" />
-            </Link>
+            {linkUrl && (
+              <Link href={linkUrl} target="_blank">
+                <Button color="black" description={buttonText} className="mt-6" />
+              </Link>
+            )}
           </div>
         </div>
       </FadeUp>

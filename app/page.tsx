@@ -30,22 +30,21 @@ export default function Home() {
               transition={{ duration: 0.7 }}
               className="text-[12vw] leading-[10vw] sm:text-[8vw] sm:leading-[7vw] font-thin tracking-tighter"
             >
-              WELLNESS
-              <br />
-              DESIGN
+              Stakeholder
             </motion.p>
 
             <motion.p
               initial={{ opacity: 0, translateY: "100%" }}
               animate={{ opacity: 1, translateY: "0" }}
               transition={{ delay: 0.5, duration: 0.5 }}
-              className="mt-1"
+              className="mt-1 ml-1"
             >
-              世界を、笑顔に。
+              絡まる
             </motion.p>
           </div>
 
           <motion.a
+            href="/about/intro"
             initial={{ opacity: 0, translateX: "-50%", translateY: "100%" }}
             animate={{ opacity: 1, translateY: "0" }}
             transition={{ delay: 0.6, duration: 0.8, ease: "easeOut" }}
@@ -86,64 +85,39 @@ export default function Home() {
         </FadeUp>
 
         <FadeUp>
-          <h2 className="mt-6 sm:mt-8 text-center sm:text-left text-xl font-medium">コミットメント</h2>
-        </FadeUp>
-
-        <FadeUp>
           <p className="text-xs leading-6 mt-6">
-            マッシュグループの取り組みやお約束をご紹介します
+            私たちと関係するすべての人々の人生にポジティブな変化と幸せをもたらすよう努力しています。 <br />
+            “楽しみ”という意味を込めて、すべての人々が私たちのサービスを通じて日常生活で小さな喜びを見つけ、その楽しみが人生の質を向上させることを願っています。
             <br />
-            私たちは、「私たちの発想を形にし、人々に幸せを届ける。」を企業理念に掲げています。
+            ラオンは、顧客が直面する問題を解決し、彼らのニーズを満たすために絶えず研究し開発しています。
             <br />
-            遊び心のあるデザインも、カラダや地球にやさしい素材を選ぶことも、すべては
-            <br />
-            “人々に心身ともに健康で、笑顔あふれる毎日を届けたい”という願いから。
+            チームワークと協力を基盤として、すべてのステークホルダーが共に成長し発展できる環境を作っていきます。
           </p>
-        </FadeUp>
-
-        <FadeUp>
-          <p className="text-xs leading-6 mt-6">
-            「ウェルネスデザイン」というコーポレートスローガンのもとで追求し続けているのは、
-            <br />
-            お客さま、取引先さま、スタッフ、そして社会に“笑顔を届けるための仕事をする”こと。
-            <br />
-            きめの細かいモノづくりの精神に、人々の24時間を豊かにしたいという想いを乗せて
-            <br />
-            ライフスタイルをデザインしていきます。
-          </p>
-        </FadeUp>
-
-        <FadeUp className="flex justify-center">
-          <Button width="fix" color="black" title="MAGAZINE" description="MASH GROUP マガジン" className="mt-8 " />
         </FadeUp>
       </Section>
 
       <BrandSection
         icon={<RumorIcon />}
         title="ルーマースプレッズ"
-        description="ルーマー スプレッズの詳細情報"
         imageUrl="/rumor/rumor_in.jpeg"
         logoUrl="/rumor/rumor_logo_fit.svg"
-        linkUrl="#"
+        linkUrl="/brand"
       />
 
       <BrandSection
         icon={<BroomIcon />}
         title="ビルームススタジオ"
         imageUrl="/broom/broom_in.jpeg"
-        description="ビルームススタジオの詳細情報"
         logoUrl="/broom/broom_logo_fit.svg"
-        linkUrl="#"
-        bgColor="#EFEFEF"
+        linkUrl="/brand"
       />
 
       <BrandSection
         icon={<HalfIcon />}
         title="二分の一"
         imageUrl="/half/half_out.jpeg"
-        description="二分の一の詳細情報"
         logoUrl="/logo.svg"
-        linkUrl="#"
+        linkUrl="/brand"
       />
     </div>
   );
