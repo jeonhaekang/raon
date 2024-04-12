@@ -26,7 +26,7 @@ const menus = [
       },
     ],
   },
-  { title: "BRANS", href: "/brand" },
+  { title: "BRAND", href: "/brand" },
   { title: "CONTACT", href: "/contact" },
 ];
 

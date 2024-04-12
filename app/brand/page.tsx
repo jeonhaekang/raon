@@ -14,16 +14,16 @@ const Brand = () => {
 
         <FadeUp>
           <div className="grid grid-cols-2 sm:grid-cols-3 gap-6 sm:gap-10 mt-8">
+            <a href="#rumor" className="relative w-full pt-[50%] border border-black">
+              <Image src={"/rumor/rumor_logo.svg"} alt="carousel" fill={true} />
+            </a>
+
             <a href="#broom" className="relative w-full pt-[50%] border border-black">
               <Image src={"/broom/broom_logo.svg"} alt="carousel" fill={true} />
             </a>
 
             <a href="#1/2" className="relative w-full pt-[50%] border border-black">
               <Image src={"/half/half_logo.svg"} alt="carousel" fill={true} />
-            </a>
-
-            <a href="#rumor" className="relative w-full pt-[50%] border border-black">
-              <Image src={"/rumor/rumor_logo.svg"} alt="carousel" fill={true} />
             </a>
           </div>
         </FadeUp>

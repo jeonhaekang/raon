@@ -37,19 +37,21 @@ const About = () => {
           各種卸業者のコンタクト　、人材育成　、　広告パンフレット制作
           <br />
           ネット展開のサイト制作、サーバー管理
-          <ul className="mt-2">
-            {[
-              '黒花堂　全般のコンサルティング, "・CAFÉ PLACE　TOKYO 全般のコンサルティング',
-              "ナンマンホットドック　 全般のコンサルティング",
-              "B.RoomStudio 全般をコントロールし弊社ブランドとしてOPEN",
-              "1/2　TOKYO 全般をコントロールし弊社ブランドとしてOPEN",
-              "1/2の通販サイトの 全般をコントロールしOPEN",
-              "Rumor Spreads 全般をコントロールし弊社ブランドとしてOPEN",
-            ].map((desc) => (
-              <li key={desc}>・ {desc}</li>
-            ))}
-          </ul>
         </p>
+
+        <ul className="text-xs mt-2 flex flex-col gap-2">
+          {[
+            "黒花堂　全般のコンサルティング",
+            "CAFÉ PLACE　TOKYO 全般のコンサルティング",
+            "ナンマンホットドック　 全般のコンサルティング",
+            "B.RoomStudio 全般をコントロールし弊社ブランドとしてOPEN",
+            "1/2　TOKYO 全般をコントロールし弊社ブランドとしてOPEN",
+            "1/2の通販サイトの 全般をコントロールしOPEN",
+            "Rumor Spreads 全般をコントロールし弊社ブランドとしてOPEN",
+          ].map((desc) => (
+            <li key={desc}>・ {desc}</li>
+          ))}
+        </ul>
       </FadeUp>
     </Section>
   );

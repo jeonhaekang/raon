@@ -6,7 +6,7 @@ import { Section } from "@/components/sections";
 const data = [
   { title: "会社名", desc: "株式会社RAON" },
   { title: "本社所在地", desc: "東京都新宿区大久保１丁目１３番１号" },
-  { title: "代表者", desc: "金熙錫" },
+  { title: "代表者", desc: "金熙錫(キム ヒソク)" },
   { title: "設立", desc: "令和５年２月７日" },
   { title: "資本金", desc: "金３００万円" },
   { title: "決算期", desc: "毎年３月" },
