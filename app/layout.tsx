@@ -12,7 +12,7 @@ export const metadata: Metadata = {
   title: "RAON Co.,Ltd. | 株式会社ラオン",
   description: "株式会社RAON",
   icons: {
-    icon: "/logo.svg",
+    icon: "/favicon.ico",
   },
 };
 
