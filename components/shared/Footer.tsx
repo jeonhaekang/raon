@@ -10,7 +10,7 @@ export const Footer = () => {
 
   return (
     <motion.footer className={clsx("flex flex-col items-center py-9 px-6 sm:px-12 bg-[#d2d2d2]")} {...control}>
-      <Image src="/logo.svg" width={232} height={50} alt="brand logo" />
+      <Image src="/logo.svg" width={30} height={90} alt="brand logo" />
 
       <div className="border-t my-6 w-full border-black" />
 

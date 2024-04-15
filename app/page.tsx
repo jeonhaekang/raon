@@ -81,7 +81,7 @@ export default function Home() {
 
       <Section>
         <FadeUp>
-          <Image src="/logo.svg" alt="brand logo" width={400} height={90} />
+          <Image src="/logo.svg" alt="brand logo" width={60} height={300} />
         </FadeUp>
 
         <FadeUp>

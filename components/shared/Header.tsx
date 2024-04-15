@@ -4,6 +4,7 @@ import clsx from "clsx";
 import { motion, useAnimationControls, useScroll } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
 import { useGlobalNav } from ".";
+import { LogoIcon } from "../common";
 
 export const Header = () => {
   const imageRef = useRef<HTMLImageElement>(null);
@@ -38,7 +39,7 @@ export const Header = () => {
         >
           <div ref={imageRef}>
             <a href="/" className="font-thin text-4xl">
-              RAON
+              <LogoIcon />
             </a>
           </div>
         </motion.div>
