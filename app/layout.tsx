@@ -11,6 +11,9 @@ const notoSans = Noto_Sans_JP({ subsets: ["latin"] });
 export const metadata: Metadata = {
   title: "RAON Co.,Ltd. | 株式会社ラオン",
   description: "株式会社RAON",
+  icons: {
+    icon: "/logo.svg",
+  },
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
