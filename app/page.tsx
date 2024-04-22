@@ -81,7 +81,7 @@ export default function Home() {
 
       <Section>
         <FadeUp className="flex justify-center">
-          <Image src="/logo.svg" alt="brand logo" width={60} height={300} />
+          <Image src="/logo.svg" alt="brand logo" width={72} height={300} />
         </FadeUp>
 
         <FadeUp>

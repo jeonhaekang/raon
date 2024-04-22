@@ -39,7 +39,7 @@ export const Header = () => {
         >
           <div ref={imageRef}>
             <a href="/" className="font-thin text-4xl">
-              <LogoIcon width={46} height={132} />
+              <LogoIcon width={52} height={156} />
             </a>
           </div>
         </motion.div>
