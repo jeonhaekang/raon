@@ -31,10 +31,10 @@ export const BrandSection = ({
 }: BrandSectionProps) => {
   return (
     <Section {...sectionProps}>
-      <FadeUp>{icon}</FadeUp>
+      <FadeUp className="flex justify-center">{icon}</FadeUp>
 
-      <FadeUp>
-        <h2 className="mt-6 sm:mt-8 text-center sm:text-left text-xl font-medium">{title}</h2>
+      <FadeUp className="flex justify-center">
+        <h2 className="mt-2 sm:mt-2 text-center sm:text-left text-xl font-medium">{title}</h2>
       </FadeUp>
 
       <FadeUp>

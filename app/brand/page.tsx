@@ -31,7 +31,7 @@ const Brand = () => {
 
       <div id="rumor">
         <BrandSection
-          icon={<RumorIcon />}
+          icon={<RumorIcon width={170} />}
           title="Rumor Spreads"
           button={false}
           description={
@@ -74,7 +74,7 @@ const Brand = () => {
 
       <div id="broom">
         <BrandSection
-          icon={<BroomIcon />}
+          icon={<BroomIcon width={170} />}
           title="B.RoomStudio"
           description={
             <div className="text-xs flex flex-col gap-2">
@@ -116,7 +116,7 @@ const Brand = () => {
 
       <div id="1/2">
         <BrandSection
-          icon={<HalfIcon />}
+          icon={<HalfIcon width={170} />}
           title="二分の一"
           description={
             <div className="text-xs flex flex-col gap-2">

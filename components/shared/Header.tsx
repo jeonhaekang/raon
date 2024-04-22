@@ -35,11 +35,11 @@ export const Header = () => {
         <motion.div
           animate={controls}
           transition={{ duration: 1, ease: "anticipate" }}
-          className={clsx("overflow-hidden w-fit origin-top-left")}
+          className={clsx("overflow-hidden m-auto w-fit origin-top-left")}
         >
           <div ref={imageRef}>
             <a href="/" className="font-thin text-4xl">
-              <LogoIcon />
+              <LogoIcon width={46} height={132} />
             </a>
           </div>
         </motion.div>
