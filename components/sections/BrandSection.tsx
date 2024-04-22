@@ -31,9 +31,9 @@ export const BrandSection = ({
 }: BrandSectionProps) => {
   return (
     <Section {...sectionProps}>
-      <FadeUp className="flex justify-center">{icon}</FadeUp>
+      <FadeUp className="flex justify-center sm:justify-start">{icon}</FadeUp>
 
-      <FadeUp className="flex justify-center">
+      <FadeUp className="flex justify-center sm:justify-start">
         <h2 className="mt-2 sm:mt-2 text-center sm:text-left text-xl font-medium">{title}</h2>
       </FadeUp>
 

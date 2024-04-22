@@ -97,7 +97,7 @@ export default function Home() {
       </Section>
 
       <BrandSection
-        icon={<RumorIcon />}
+        icon={<RumorIcon width={200} />}
         title="ルーマースプレッズ"
         imageUrl="/rumor/rumor_in.jpeg"
         logoUrl="/rumor/rumor_logo_fit.svg"
@@ -105,7 +105,7 @@ export default function Home() {
       />
 
       <BrandSection
-        icon={<BroomIcon />}
+        icon={<BroomIcon width={200} />}
         title="ビルームススタジオ"
         imageUrl="/broom/broom_in.jpeg"
         logoUrl="/broom/broom_logo_fit.svg"
@@ -113,7 +113,7 @@ export default function Home() {
       />
 
       <BrandSection
-        icon={<HalfIcon />}
+        icon={<HalfIcon width={200} />}
         title="二分の一"
         imageUrl="/half/half_out.jpeg"
         logoUrl="/logo.svg"
